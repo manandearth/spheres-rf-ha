@@ -3,7 +3,7 @@
                  [org.clojure/clojurescript "1.10.238"]
                  [reagent "0.7.0"]
                  [re-frame "0.10.5"]
-                 [garden "1.3.5"]
+                 [garden "1.3.6"]
                  [ns-tracker "0.3.1"]
                  [compojure "1.5.0"]
                  [yogthos/config "0.8"]
@@ -11,14 +11,15 @@
                  ]
 
   :plugins [[lein-cljsbuild "1.1.7"]
-            [lein-garden "0.2.8"]]
+            [lein-garden "0.3.0"]]
 
   :min-lein-version "2.5.3"
 
   :source-paths ["src/clj" "src/cljs"]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"
-                                    "resources/public/css"]
+                                    ;"resources/public/css"
+                                    ]
 
   :figwheel {:css-dirs ["resources/public/css"]
              :ring-handler spheres-rf-ha.handler/dev-handler}
