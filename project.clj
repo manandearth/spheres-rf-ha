@@ -44,7 +44,7 @@
              :main         spheres-rf-ha.server
              :aot          [spheres-rf-ha.server]
              :uberjar-name "spheres-rf-ha.jar"
-             :prep-tasks   ["compile" ["cljsbuild" "once" "min"]["garden" "once"]]}
+             :prep-tasks   [["cljsbuild" "once" "min"]["garden" "once"] "compile"]}
    }
 
   :cljsbuild
