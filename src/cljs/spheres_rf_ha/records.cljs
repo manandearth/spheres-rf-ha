@@ -20,6 +20,7 @@
   (->Body  "Earth" 1.08321e12 152098232 147098290 5.97219e24
            510072000 1 40075.017 "planet" 365.256363004 "Sun" "/images/earth01.png" "/images/earth02.png" true))
 
+earth
 ;; (insert-celestial-record! db-spec earth)
 
 (def mercury

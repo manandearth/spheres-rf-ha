@@ -15,15 +15,21 @@
          :font-family "Baloo Da, Impact, sans-serif"
          :margin-top "0"
          :margin-bottom "-20px"
-         :color "#2222200"
+         :color "#556677"
          :text-shadow "3px 3px #ddd"}]
 
 
    [:h2 {:font-size "2rem"
          :font-family "Baloo Da, Impact, sans-serif"
-         :color "#2222200"
+         :color "#447799"
          :text-shadow "3px 3px #ddd"}
          ]
+
+   [:h3 {:font-size "2rem"
+         :font-family "Baloo Da, Impact, sans-serif"
+         :color "#444477"
+         :text-shadow "3px 3px #ddd"}
+    ]
 
    [:text#staged {:font-size "2rem"
               :font-family "Baloo Da, Impact, sans-serif"
@@ -32,7 +38,7 @@
     ]
 
 
-   [:rect#axis {:fill "#cccc"
+   [:rect#axis {:fill "#ccccdd"
                 :stroke "#444444"
                 :stroke-width 2}
     ]
@@ -43,16 +49,16 @@
     ]
    
 
-   [:rect#switch {:fill "#4444"
+   [:rect#switch {:fill "#222222"
                   :stroke "#ffffff"}]
 
-   [:text#axis {:font-size "25px"
+   [:text#axis {:font-size "1.6rem"
                 :font-family "Baloo Da, Impact, sans-serif"
-                :fill "#666666"
+                :fill "#775577"
                 :text-shadow "1px 1px #ddd"}
     ]
 
-      [:text#no-axis {:font-size "25px"
+      [:text#no-axis {:font-size "1.5rem"
                       :font-family "Baloo Da, Impact, sans-serif"
                       :fill "#999999"
                       :text-shadow "1px 1px #ddd"}

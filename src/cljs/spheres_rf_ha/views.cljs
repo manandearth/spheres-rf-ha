@@ -60,29 +60,61 @@
        (if (= attr x-select)
          [:g {:on-click #(dispatch [:x-selected attr])}
           [:rect#axis {:key (str "x-axis-" attr)
-                       :x (+ 100 (* 150 (inc (.indexOf attrs attr))))
-                       :y 730
+                       :x (+ 100 (* 160 (inc (.indexOf attrs attr))))
+                       :y 750
                        :rx 10
                        :width 20
                        :height 20
                        }]
-          [:text#axis {:x (+ (* 150 (inc (.indexOf attrs attr))) 113)
-                       :y 767
+          [:text#axis {:x (+ (* 160 (inc (.indexOf attrs attr))) 113)
+                       :y 790
                        }
            (identity attr)]]
          [:g {:on-click #(dispatch [:x-selected attr])}
           [:rect#no-axis {:key (str "x-axis-" attr)
-                          :x (+ 100 (* 150 (inc (.indexOf attrs attr))))
-                          :y 730
+                          :x (+ 100 (* 160 (inc (.indexOf attrs attr))))
+                          :y 750
                           :rx 10
                        :width 20
                        :height 20
                        }]
-          [:text#no-axis {:x (+ (* 150 (inc (.indexOf attrs attr))) 113)
-                       :y 767
+          [:text#no-axis {:x (+ (* 160 (inc (.indexOf attrs attr))) 113)
+                       :y 790
                        }
            (identity attr)]])))])
 
+(defn scale-bars []
+  [:svg
+   [:g [:line {:x1 300 :y1 720 :x2 1300 :y2 720 :stroke "black"}]
+    [:line {:x1 270 :y1 0 :x2 270 :y2 700 :stroke "black"}]
+    (let [spheres (subscribe [::subs/spheres-vals])
+          x-select @(subscribe [::subs/x-selected])
+          y-select @(subscribe [::subs/y-selected])
+          xmin-val (apply min (map x-select (filter #(= true (:vis %)) @spheres)))
+          xmax-val (apply max (map x-select (filter #(= true (:vis %)) @spheres)))
+          ymin-val (apply min (map y-select (filter #(= true (:vis %)) @spheres)))
+          ymax-val (apply max (map y-select (filter #(= true (:vis %)) @spheres)))
+          x-fit  (/ xmax-val 900)
+          y-fit (/ ymax-val 500)]
+      (for [body @spheres :when (:vis body) ]
+        [:g
+         [:line {:x1 (+ 350 (/ (x-select body) x-fit))
+                 :y1 735
+                 :x2 (+ 350 (/ (x-select body) x-fit))
+                 :y2 (- 720 15)
+                 :stroke "black"
+                 }]
+         [:line {:x1 250
+                 :y1 (+ 600 (* -1 (/ (y-select body) y-fit)))
+                 :x2 290
+                 :y2 (+ 600 (* -1 (/ (y-select body) y-fit)))
+                 :stroke "black"}]
+         [:text {:x 250 
+                 :y (+ 600 (* -1 (/ (y-select body) y-fit)))
+                 } (y-select body)]
+         [:text {:x (+ 350 (/ (x-select body) x-fit))
+                 :y 735} (x-select body)]]))]
+   ])
 
 (defn body-menu []
   [:svg
@@ -92,28 +124,28 @@
          [:g
           {:on-click #(dispatch [:visible (:name body)])}
           [:rect#axis {:key (str "body-list-rect" body)
-                       :x 1320
+                       :x 1370
                        :y (* 45 (inc (:id body)))
                        :width 150
                        :height 35
                        :rx 10
                        }]
           [:text#axis {:key (str "body-list-text" body)
-                       :x 1340
+                       :x 1390
                        :y (+ (* 45 (inc (:id body))) 25)
                        }
            (:name body)]]
          [:g
           {:on-click #(dispatch [:invisible (:name body)])}
           [:rect#no-axis {:key (str "body-list-rect" body)
-                          :x 1320
+                          :x 1370
                           :y (* 45 (inc (:id body)))
                           :width 150
                           :height 35
                           :rx 10
                           }]
           [:text#no-axis {:key (str "body-list-text" body)
-                          :x 1340
+                          :x 1390
                           :y (+ (* 45 (inc (:id body))) 25)
                           }
            (:name body)]]
@@ -142,7 +174,7 @@
     [:g (for [body @spheres
               :when (:vis body) ;toggle visability
               ]
-          (let [xtrans (+ 300 (/ (x-select body) x-fit))
+          (let [xtrans (+ 350 (/ (x-select body) x-fit))
                 ;(+ 250 (* 40 (.log js/Math (+ 1 (x-select body))))) 
                 ytrans (+ 600 (* -1 (/ (y-select body) y-fit)))
                 ;(* 4 (.log js/Math (+ 1 (y-select body))) 2)
@@ -165,9 +197,13 @@
   [:div
    [:h1 "Project Spheres" ]
    [:h2 "Interplanetary relations"]
+   [:h3 "Explore the different attributes of the major bodies of the solar system"
+    [:h3 "select visibility from the list on the right, the scale changes accordingly"]
+    [:h3 "Select the attributes to compare on the x and y axes"]
+    [:h3 "The scale of the graph is linear yet the representation of the size of each body is a log scale (the differences are too great to show linearly"]]
    [:svg {:width 1600
           :height 800}
-    [background-box {:x 250
+    [background-box {:x 300
                      :y 0
                      :width 1000
                      :height 700
@@ -175,6 +211,7 @@
     [bodies]
     [y-axis]
     [x-axis]
+    [scale-bars]
     [body-menu]
     ]
    ]
