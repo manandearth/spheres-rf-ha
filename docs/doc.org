@@ -1,0 +1,30 @@
+#+title: spheres-project in re-frame
+#+startup: indent showall
+* Working dev
+At the moment [2019-01-02 Wed] 
+- C-c M-j
+- (require '[figwheel-sidecar-repl-api :as fw])
+- (fw/start-figwheel!)
+- (fw/cljs-repl)
+then for the CSS that's in clj,-  M-x cider-connect-sibling-clj
+** TODO this can be automated with a user.clj in the root. find out.
+* deployment
+** github pages
+** heroku
+* development
+** db
+** main-view
+** functionality
+*** TODO add scale in main-view
+*** TODO create presets, groups of bodies as views
+This way we avoid having comparisons that don't make sense.
+This will require redesigning the re-frame db.
+*** TODO 
+** visual
+*** TODO as I need an intro we must find a better suited bg to take smaller fonts.
+*** TODO how to make scale work. It is a CSS question..
+both for elements in the page as well as for elemnts in the main view.
+
+* data
+** sources
+** implementation
