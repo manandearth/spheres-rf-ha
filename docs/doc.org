@@ -10,20 +10,79 @@ then for the CSS that's in clj,-  M-x cider-connect-sibling-clj
 ** TODO this can be automated with a user.clj in the root. find out.
 * deployment
 ** github pages
+cracked it finally... [2019-01-03 Thu]
+- add a remote 'github' - git remote add github https://github.com/manandearth/spheres-rf-ha.git
+- created a branch 'gh-pages' - git branch gh-pages
+- checkout to it -  git checkout gh-pages
+- need index.html at root with correct paths to css and js
+- I had to comment out resources/public/resources/js from the .gitignore
+- from the project.clj I had to delete ["garden" "once"] from the :preptasks
+- lein clean
+- lein cljsbuild once min
+- git add . and git commit -m ""
+- git push github gh-pages
+- *ISSUE* - when I committed changed to the index.html in github website, I had to -> git pull github gh-pages
 ** heroku
+the master branch is the one used in the Heroku deployment.  It does
+not require the index file at root, but perhapas in the next commit it
+might well be the same as the github pages.
 * development
 ** db
+*** DONE redesign:
+****  there should be for :spheres key a val which is a map first planets, second their satelites:
+#+BEGIN_SRC clojure
+{:spheres {:planet1 {:mass
+                     :volume
+                     ,,,
+                     :satelites {:satelite1 {:mass
+                                             :volume
+                                             ,,,}
+                                 :satelite2 {,,,
+                                             }}
+                     }
+           :planet2 (:mass
+                     ;;;
+                     )}}
+
+#+END_SRC
+When moving a preset, to demonstrate distances (apoapsis and
+periapsis) i will need to reset the planet's (or Sun) to be the point
+of reference for distance.
+**** DONE every sphere will have 2 vis keys:
+1. :included - for when its system is selected
+2. :vis - when it is toggled on from the list
+
+The rest of the functions need be updated so that the body-menu shows
+just the spheres available in the system and so on...
+**** look at designing functions that construct entries and use the entries
+the records.cljs can be made to create a language of usage of the
+entries to depend less on reframe subs, be more coherent.
+**** understand how spec can help in contructing
+Is spec necessary, when I supply the data?  Will I need to construct
+or the user, and therefor require validation of the attributes?
+*** TODO add more moons for all systems
+*** TODO spec it
+see how to spec in order to accept input from user
 ** main-view
 ** functionality
-*** TODO add scale in main-view
-*** TODO create presets, groups of bodies as views
+*** TODO the different attributes need to pop the unit name (km kg days...) at the table axes.
+*** NEXT the preset parent need to have a zero value for periapsis and apoapsis
+the difficulty is how to condition that, it requires that the scale
+will change accordingly and that the original value will not be lost
+for when the selected preset changes.
+*** TODO not sure what data to bring in on hover...
+- the x and the y?
+- a list of attributes of the body?
+*** DONE add scale in main-view
+*** DONE create presets, groups of bodies as views
 This way we avoid having comparisons that don't make sense.
 This will require redesigning the re-frame db.
-*** TODO 
 ** visual
 *** TODO as I need an intro we must find a better suited bg to take smaller fonts.
 *** TODO how to make scale work. It is a CSS question..
 both for elements in the page as well as for elemnts in the main view.
+** more pages
+perhaps an explaination, an about, in a different frame. history..
 
 * data
 ** sources
