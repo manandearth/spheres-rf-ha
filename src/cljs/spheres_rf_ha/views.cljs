@@ -28,6 +28,7 @@
   "the systems are presets named by ther main body of each
 i.e. 'Sun' in the case of the solar system"
   [:svg
+   [:text#axis {:x 125 :y 50} "systems:"]
    {:x 175 :y 0} 
    (let [systems (subscribe [::subs/presets])
          sys-selected @(subscribe [::subs/sys-selected])]
@@ -250,10 +251,8 @@ i.e. 'Sun' in the case of the solar system"
   [:div
    [:h1 "Project Spheres" ]
    [:h2 "Interplanetary relations"]
-   [:h3 "Explore the different attributes of the major bodies of the solar system"]
-   [:h3 "select visibility from the list on the right, the scale changes accordingly"]
-   [:h3 "Select the attributes to compare on the x and y axes"]
-   [:h3 "The scale of the graph is linear yet the representation of the size of each body is a log scale (the differences are too great to show linearly"]
+   [:h3 "Explore the different attributes of the major bodies of the solar system; select visibility from the list on the right, the scale changes accordingly. Select the attributes to compare on the" [:span {:color "red"} " x "] "and" [:span {:color "red"} " y "] "axes. The scale of the graph is linear yet the representation of the size of each body is a log scale (the differences are too great to show linearly)"]
+   
    ;;[mars-group]
    [:svg {:width 1600
           :height 950}

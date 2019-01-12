@@ -1,6 +1,6 @@
 # spheres-rf-ha
 
-A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.
+A [re-frame](https://github.com/Day8/re-frame) application designed to illustrate the systems within our solar system, relations.
 
 ## Development Mode
 

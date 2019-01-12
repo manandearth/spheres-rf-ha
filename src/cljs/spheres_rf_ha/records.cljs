@@ -258,14 +258,192 @@
                   "Charon" {:volume 9.32e+8
                             :apoapsis 17536
                             :periapsis 17536
-                            :mass 1.586e+8
+                            :mass 1.586e+21
                             :surface_area 4.6e+6
                             :satelites nil
                             :circumference 3792.5
                             :form "moon"
                             :orbital_period 6.3872304
                             :parent "Pluto"
-                            :vis true}}
+                            :vis true}
+                  "Nix" {:volume 79704
+                         :apoapsis 48708
+                         :periapsis 48708
+                         :mass 4.5e+16
+                         :surface_area 962.113
+                         :satelites nil
+                         :circumference 109.9557
+                         :form "moon"
+                         :orbital_period 24.85463
+                         :parent "Pluto"
+                         :vis true}
+                  "Hydra" {:volume 73125
+                           :apoapsis 65000
+                           :periapsis 65000
+                           :mass 4.8e+16
+                           :surface_area 1134.115
+                           :satelites nil
+                           :circumference 119.3805
+                           :form "moon"
+                           :orbital_period 38.20177
+                           :parent "Pluto"
+                           :vis true}
+                  "Kerberos" {:volume 1620
+                              :apoapsis 57783
+                              :periapsis 57783
+                              :mass 1.65e+16
+                              :surface_area 166.7634 
+                              :satelites nil
+                              :circumference 45.7778
+                              :form "moon"
+                              :orbital_period 32.16756
+                              :parent "Pluto"
+                              :vis true}
+                  "Styx" {:volume 1152
+                          :apoapsis 42656
+                          :periapsis 42656
+                          :mass 7.5e+15
+                          :surface_area 132.8595  
+                          :satelites nil
+                          :circumference 40.8603
+                          :form "moon"
+                          :orbital_period 3.24
+                          :parent "Pluto"
+                          :vis true}
+                  "Europa" {:volume 1.593e+10
+                          :apoapsis 676938
+                          :periapsis 664862
+                          :mass 4.799844e+22
+                          :surface_area   3.09e+7
+                          :satelites nil
+                          :circumference 9806.8
+                          :form "moon"
+                          :orbital_period 3.551
+                          :parent "Jupiter"
+                          :vis true}
+                  "Io" {:volume 2.53e+10 
+                        :apoapsis 423400
+                        :periapsis 420000
+                        :mass 8.931938e+22
+                        :surface_area 41910000
+                        :satelites nil
+                        :circumference 11445.5
+                        :form "moon"
+                        :orbital_period 1.769137786
+                        :parent "Jupiter"
+                        :vis true}
+                  "Ganemede" {:volume 76304506998  
+                              :apoapsis 1071600
+                              :periapsis 1069200
+                              :mass 148185846875052000000000 
+                              :surface_area 86999665.93
+                              :satelites nil
+                              :circumference 16532.3
+                              :form "moon"
+                              :orbital_period 7.155 
+                              :parent "Jupiter"
+                              :vis true}
+                  "Callisto" {:volume   5.9e+10 
+                              :apoapsis 1897000
+                              :periapsis 1869000 
+                              :mass 1.075938e+23
+                              :surface_area 7.30e+7
+                              :satelites nil
+                              :circumference 15144.4
+                              :form "moon"
+                              :orbital_period 16.6890184
+                              :parent "Jupiter"
+                              :vis true}
+                  "Titan" {:volume 71496320086
+                           :apoapsis 1221930
+                           :periapsis  1221930
+                           :mass 134552523083241000000000
+                           :surface_area 83305418.53
+                           :satelites nil
+                           :circumference 16177.5 
+                           :form "moon"
+                           :orbital_period 15.94542
+                           :parent "Saturn"
+                           :vis true}
+                  "Enceladus" {:volume 67,113,076
+                               :apoapsis 237950
+                               :periapsis  237950
+                               :mass 1.08022e+20
+                               :surface_area 798648.27
+                               :satelites nil
+                               :circumference 1584
+                               :form "moon"
+                               :orbital_period 1.370218 
+                               :parent "Saturn"
+                               :vis true}
+                  "Tethys" {:volume 634264255   
+                           :apoapsis 294619
+                           :periapsis  294619
+                           :mass 617551805221061000000
+                           :surface_area 3569967.66
+                           :satelites nil
+                           :circumference 3348.9  
+                           :form "moon"
+                           :orbital_period 1.887802
+                           :parent "Saturn"
+                            :vis true}
+                  "Mimas" {:volume 32600000
+                           :apoapsis 185404
+                           :periapsis 185404
+                           :mass 3.7493e+19
+                           :surface_area 490000
+                           :satelites nil
+                           :circumference 1245.3
+                           :form "moon"
+                           :orbital_period 0.942422
+                           :parent "Saturn"
+                           :vis true}
+                  "Dione" {:volume 742338322   
+                           :apoapsis 377396
+                           :periapsis  377396
+                           :mass 1095745430185280000000
+                           :surface_area 3964776.51
+                           :satelites nil
+                           :circumference 3529.3  
+                           :form "moon"
+                           :orbital_period 2.736915
+                           :parent "Saturn"
+                           :vis true}
+                  "Rhea" {:volume 1870166133    
+                           :apoapsis 527108
+                           :periapsis  527108
+                           :mass 2307089151289080000000
+                           :surface_area 7340701.82 
+                           :satelites nil
+                           :circumference 4802.2
+                           :form "moon"
+                           :orbital_period 4.518212
+                           :parent "Saturn"
+                          :vis true}
+                  "Lapetus" {:volume 1667300080
+                           :apoapsis 3560820
+                           :periapsis  3560820
+                           :mass 1.805635e+21
+                           :surface_area 6700000
+                           :satelites nil
+                           :circumference 4621.9
+                           :form "moon"
+                           :orbital_period 79.3215
+                           :parent "Saturn"
+                             :vis true}
+                  "Pan" {:volume 22402.016
+                           :apoapsis 133584
+                           :periapsis  133584
+                           :mass 4.95e+15
+                           :surface_area 960.76
+                           :satelites nil
+                           :circumference  109.8785
+                           :form "moon"
+                           :orbital_period 0.57505
+                           :parent "Saturn"
+                           :vis true}
+                  
+                  }
   )
 
 ;;function play
