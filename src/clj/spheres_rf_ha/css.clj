@@ -6,7 +6,7 @@
   [
    ;; [:body {:background-image "url(/images/gray2.png)"
    ;;         :background-size "8px"}]
-
+   
    [:#app {:margin "0 auto"
            :width "1010px"}]
 
@@ -21,13 +21,13 @@
 
 
    [:h2 {:font-size "2rem"
-         :font-family "Baloo Da, Impact, sans-serif"
+         :font-family "Roboto Mono, Impact, sans-serif"
          :color "#447799"
          :text-shadow "3px 3px #ddd"}
          ]
 
    [:h3 {:font-size "2rem"
-         :font-family "Baloo Da, Impact, sans-serif"
+         :font-family "Roboto Mono, Impact, sans-serif"
          :color "#444477"
          :text-shadow "3px 3px #ddd"}
     ]
@@ -43,6 +43,11 @@
               :text-shadow "1px 1px #ddd"}
     ]
 
+   [:text#spheres {:font-size "1rem"
+                  :font-family "Roboto Mono, Impact, sans-serif"
+                  :fill "darkblue"
+                  :text-shadow "1px 1px #ddd"}
+    ]
 
    [:rect#axis {:fill "#ccccdd"
                 :stroke "#444444"
@@ -58,18 +63,22 @@
    [:rect#switch {:fill "#222222"
                   :stroke "#ffffff"}]
 
-   [:text#axis {:font-size "1.6rem"
+   [:text#axis {:font-size "1.4rem"
                 :font-family "Baloo Da, Impact, sans-serif"
                 :fill "#775577"
                 :text-shadow "1px 1px #ddd"}
     ]
 
-      [:text#no-axis {:font-size "1.5rem"
-                      :font-family "Baloo Da, Impact, sans-serif"
-                      :fill "#999999"
-                      :text-shadow "1px 1px #ddd"}
-       ]
-   
+   [:text#no-axis {:font-size "1.2rem"
+                   :font-family "Roboto Mono, Impact, sans-serif"
+                   :fill "#999999"
+                   :text-shadow "1px 1px #ddd"}
+    ]
+
+   [:circle#staged {:fill "#6666"}]
+   [:circle#staged:hover {:fill "#4444"}]
+
+
    [:.fill--black {:fill "#222200"}]
    [:.fill--gray1 {:fill "#444444"}]
    [:.fill--gray2 {:fill "#888888"}]

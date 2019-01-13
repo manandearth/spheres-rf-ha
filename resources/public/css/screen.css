@@ -18,14 +18,14 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  font-family: Baloo Da, Impact, sans-serif;
+  font-family: Roboto Mono, Impact, sans-serif;
   color: #447799;
   text-shadow: 3px 3px #ddd;
 }
 
 h3 {
   font-size: 2rem;
-  font-family: Baloo Da, Impact, sans-serif;
+  font-family: Roboto Mono, Impact, sans-serif;
   color: #444477;
   text-shadow: 3px 3px #ddd;
 }
@@ -41,6 +41,13 @@ text#staged {
   font-size: 1rem;
   font-family: Baloo Da, Impact, sans-serif;
   color: #888888;
+  text-shadow: 1px 1px #ddd;
+}
+
+text#spheres {
+  font-size: 1rem;
+  font-family: Roboto Mono, Impact, sans-serif;
+  fill: darkblue;
   text-shadow: 1px 1px #ddd;
 }
 
@@ -62,17 +69,25 @@ rect#switch {
 }
 
 text#axis {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: Baloo Da, Impact, sans-serif;
   fill: #775577;
   text-shadow: 1px 1px #ddd;
 }
 
 text#no-axis {
-  font-size: 1.5rem;
-  font-family: Baloo Da, Impact, sans-serif;
+  font-size: 1.2rem;
+  font-family: Roboto Mono, Impact, sans-serif;
   fill: #999999;
   text-shadow: 1px 1px #ddd;
+}
+
+circle#staged {
+  fill: #6666;
+}
+
+circle#staged:hover {
+  fill: #4444;
 }
 
 .fill--black {

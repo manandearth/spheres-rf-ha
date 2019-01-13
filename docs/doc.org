@@ -60,12 +60,15 @@ entries to depend less on reframe subs, be more coherent.
 **** understand how spec can help in contructing
 Is spec necessary, when I supply the data?  Will I need to construct
 or the user, and therefor require validation of the attributes?
+*** TODO Another design solution can be 
+to have a key that gives the value for periapsis and apoapsis in the
+system of which a planet is parent.
 *** DONE add more moons for all systems
 *** TODO spec it
 see how to spec in order to accept input from user
 ** main-view
 ** functionality
-*** TODO the different attributes need to pop the unit name (km kg days...) at the table axes.
+*** DONE the different attributes need to pop the unit name (km kg days...) at the table axes.
 *** NEXT the preset parent need to have a zero value for periapsis and apoapsis
 the difficulty is how to condition that, it requires that the scale
 will change accordingly and that the original value will not be lost

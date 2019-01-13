@@ -106,18 +106,20 @@
                   "Earth" {:volume 1.08321e12   
                            :apoapsis 152098232
                            :periapsis 147098290
-                           :mass     5.97219e24
+                           :self-bias 0
+                           :mass 5.97219e24
                            :surface_area 510072000
-                           :satelites  ["Moon"]
+                           :satelites ["Moon"]
                            :circumference 40075.017
-                           :form         "planet"
+                           :form "planet"
                            :orbital_period 365.256363004
-                           :parent        "Sun"
+                           :parent "Sun"
                            :vis true
                            :included false
                            }
                   "Mars" {:volume 163180000000 
-                          :apoapsis 249200000 
+                          :apoapsis 249200000
+                          :self-bias 0
                           :periapsis 206700000 
                           :mass 6.4171e+23 
                           :surface_area 144798500 
@@ -130,7 +132,8 @@
                           :inluded false}
                   "Jupiter" {:volume 1431300000000000 
                              :apoapsis 816620000 
-                             :periapsis 740520000 
+                             :periapsis 740520000
+                             :self-bias 0
                              :mass 1.8982e+27 
                              :surface_area 61419000000 
                              :satelites ["Io" "Europa" "Ganymede" "Callisto"]
@@ -142,7 +145,8 @@
                              :included false}
                   "Saturn" {:volume 827130000000000 
                             :apoapsis 1514500000 
-                            :periapsis 1352550000 
+                            :periapsis 1352550000
+                            :self-bias 0
                             :mass 5.6834e+26 
                             :surface_area 42700000000 
                             :satelites ["Mimas" "Enceladus" "Tethys" "Dione" "Rhea" "Titan" "Iapetus" "Hyperion"]
@@ -154,7 +158,8 @@
                             :included false}
                   "Uranus" {:volume 68330000000000 
                             :apoapsis 3008000000 
-                            :periapsis 2742000000 
+                            :periapsis 2742000000
+                            :self-bias 0
                             :mass 8.681e+25 
                             :surface_area 8115600000 
                             :satelites [ "Puck" "Miranda" "Ariel" "Umbriel" "Titania" "Oberon"]
@@ -166,7 +171,8 @@
                             :included false}
                   "Neptune" {:volume 62540000000000 
                              :apoapsis 4540000000 
-                             :periapsis 4460000000 
+                             :periapsis 4460000000
+                             :self-bias 0
                              :mass 1.02413e+26 
                              :surface_area 7618300000 
                              :satelites ["Triton" "Nereid" "Naiad" "Neso" "Proteus" "Psamathe" "Larissa" "Thalassa" "Despina" "Galatea" "Halimede" "Sao" "Laomedeia" "Neptune XIV"]
@@ -178,7 +184,8 @@
                              :included false}
                   "Pluto" {:volume 7057000000 
                            :apoapsis 7231900000000 
-                           :periapsis 4436820000 
+                           :periapsis 4436820000
+                           :self-bias 2035
                            :mass 1.303e+22 
                            :surface_area 17790000 
                            :satelites ["Charon" "Styx" "Nix" "Kerberos" "Hydra"]
@@ -201,7 +208,8 @@
                            :vis true}
                   "Sun" {:volume 1410000000000000000 
                          :apoapsis 0 
-                         :periapsis 0 
+                         :periapsis 0
+                         :self-bias 0
                          :mass 1.9885e+30 
                          :surface_area 6090000000000 
                          :satelites ["Mercury" "Venus" "Earth" "Mars" "Jupiter" "Ceres" "Saturn" "Halley" "Uranus" "Neptune" "Pluto"]
@@ -365,7 +373,7 @@
                            :orbital_period 15.94542
                            :parent "Saturn"
                            :vis true}
-                  "Enceladus" {:volume 67,113,076
+                  "Enceladus" {:volume 67113076
                                :apoapsis 237950
                                :periapsis  237950
                                :mass 1.08022e+20

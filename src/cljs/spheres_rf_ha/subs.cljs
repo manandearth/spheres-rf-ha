@@ -96,7 +96,7 @@
 ;;those attributes that can be demonstarted in the vis:
 (reg-sub ::attributes
          (fn [db _]
-           (vec '(:circumference :volume :mass :apoapsis :periapsis :orbital_period))))
+           (vec '(:circumference :volume :mass :surface_area :apoapsis :periapsis :orbital_period))))
 
 ;; (reg-sub
 ;;  ::volume

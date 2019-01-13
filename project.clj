@@ -8,6 +8,7 @@
                  [compojure "1.5.0"]
                  [yogthos/config "0.8"]
                  [ring "1.4.0"]
+                 ;; [re-frisk "0.5.3"]
                  ]
 
   :plugins [[lein-cljsbuild "1.1.7"]
@@ -36,7 +37,8 @@
   {:dev
    {:dependencies [[binaryage/devtools "0.9.10"]
                    [figwheel-sidecar "0.5.16"]
-                   [cider/piggieback "0.3.5"]]
+                   [cider/piggieback "0.3.5"]
+                   [re-frisk "0.5.3"]]
 
     :plugins      [[lein-figwheel "0.5.16"]]}
    :prod { }
@@ -58,7 +60,7 @@
                     :output-dir           "resources/public/js/compiled/out"
                     :asset-path           "js/compiled/out"
                     :source-map-timestamp true
-                    :preloads             [devtools.preload]
+                    :preloads             [devtools.preload re-frisk.preload]
                     :external-config      {:devtools/config {:features-to-install :all}}
                     }}
 
