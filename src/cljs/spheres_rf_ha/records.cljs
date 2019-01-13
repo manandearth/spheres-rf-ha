@@ -432,16 +432,104 @@
                            :parent "Saturn"
                              :vis true}
                   "Pan" {:volume 22402.016
-                           :apoapsis 133584
-                           :periapsis  133584
-                           :mass 4.95e+15
-                           :surface_area 960.76
+                         :apoapsis 133584
+                         :periapsis  133584
+                         :mass 4.95e+15
+                         :surface_area 960.76
+                         :satelites nil
+                         :circumference  109.8785
+                         :form "moon"
+                         :orbital_period 0.57505
+                         :parent "Saturn"
+                         :vis true}
+                  "Ariel" {:volume 812600000
+                           :apoapsis 191020
+                           :periapsis 191020
+                           :mass 1353e+18
+                           :surface_area 4211300
                            :satelites nil
-                           :circumference  109.8785
+                           :circumference 7274.67
                            :form "moon"
-                           :orbital_period 0.57505
-                           :parent "Saturn"
+                           :orbital_period 2.520379
+                           :parent "Uranus"
                            :vis true}
+                  "Umbriel" {:volume 837300000
+                             :apoapsis 266300
+                             :periapsis 266300
+                             :mass 1172e+18
+                             :surface_area 4296000
+                             :satelites nil
+                             :circumference 7347.46
+                             :form "moon"
+                             :orbital_period 4.144177
+                             :parent "Uranus"
+                             :vis true}
+                  "Titania" {:volume 2065000000
+                             :apoapsis 435910
+                             :periapsis 435910
+                             :mass 3527e+18
+                             :surface_area 7820000
+                             :satelites nil
+                             :circumference  9913.07
+                             :form "moon"
+                             :orbital_period 8.705872
+                             :parent "Uranus"
+                             :vis true}
+                  "Oberon" {:volume 1849000000
+                            :apoapsis 583520
+                            :periapsis 583520
+                            :mass 3014e+18
+                            :surface_area 7285000
+                            :satelites nil
+                            :circumference 9567.97
+                            :form "moon"
+                            :orbital_period 13.463239
+                            :parent "Uranus"
+                            :vis true}
+                  "Puck" {:volume 2225000
+                          :apoapsis 86010
+                          :periapsis 86010
+                          :mass 2.9e+18
+                          :surface_area 82400  
+                          :satelites nil
+                          :circumference 1017.58
+                          :form "moon"
+                          :orbital_period 0.761833
+                          :parent "Uranus"
+                          :vis true}
+                  "Nereid" {:volume 20579526
+                          :apoapsis  1372000                 
+                          :periapsis 9655000
+                          :mass 2700e+16
+                          :surface_area 363168.11  
+                          :satelites nil
+                          :circumference 1068.1
+                          :form "moon"
+                          :orbital_period 360.1362
+                          :parent "Neptune"
+                            :vis true}
+                  "Triton" {:volume 10384058491
+                            :apoapsis 354759
+                            :periapsis 354759
+                            :mass 2140800e+16
+                            :surface_area 23017714.99  
+                            :satelites nil
+                            :circumference 8503.7
+                            :form "moon"
+                            :orbital_period 5.877
+                            :parent "Neptune"
+                            :vis true}
+                  "Proteus" {:volume 3.4e+7
+                             :apoapsis 117709
+                            :periapsis 117584
+                            :mass 4.4e+19
+                            :surface_area 554176.94
+                            :satelites nil
+                            :circumference 1319.5
+                            :form "moon"
+                             :orbital_period 1.12231477
+                            :parent "Neptune"
+                            :vis true}
                   
                   }
   )

@@ -3,8 +3,9 @@
 
 (defstylesheet screen
   {:output-to "resources/public/css/screen.css"}
-  [[:body {:background-image "url(/images/gray2.png)"
-           :background-size "8px"}]
+  [
+   ;; [:body {:background-image "url(/images/gray2.png)"
+   ;;         :background-size "8px"}]
 
    [:#app {:margin "0 auto"
            :width "1010px"}]
@@ -31,7 +32,12 @@
          :text-shadow "3px 3px #ddd"}
     ]
 
-   [:text#staged {:font-size "2rem"
+   [:h4 {:font-size "1rem"
+         :font-family "Baloo Da, Impact, sans-serif"
+         :color "#444477"
+         :text-shadow "3px 3px #ddd"}]
+
+   [:text#staged {:font-size "1rem"
               :font-family "Baloo Da, Impact, sans-serif"
               :color "#888888"
               :text-shadow "1px 1px #ddd"}

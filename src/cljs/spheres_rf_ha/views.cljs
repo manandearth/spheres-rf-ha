@@ -27,7 +27,7 @@
 (defn systems []
   "the systems are presets named by ther main body of each
 i.e. 'Sun' in the case of the solar system"
-  [:svg
+  [:svg {:x 180}
    [:text#axis {:x 125 :y 50} "systems:"]
    {:x 175 :y 0} 
    (let [systems (subscribe [::subs/presets])
@@ -239,7 +239,10 @@ i.e. 'Sun' in the case of the solar system"
                :cx xtrans 
                :cy ytrans
                :fill "#6666"
-               :key (str "circle-" (:name body))}]
+               :key (str "circle-" (:name body))
+               :on-mouse-over #() ;TODO event for mouse on sphere
+               }
+              ]
              [:text#staged
               {:x xtrans
                :y ytrans
@@ -251,7 +254,7 @@ i.e. 'Sun' in the case of the solar system"
   [:div
    [:h1 "Project Spheres" ]
    [:h2 "Interplanetary relations"]
-   [:h3 "Explore the different attributes of the major bodies of the solar system; select visibility from the list on the right, the scale changes accordingly. Select the attributes to compare on the" [:span {:color "red"} " x "] "and" [:span {:color "red"} " y "] "axes. The scale of the graph is linear yet the representation of the size of each body is a log scale (the differences are too great to show linearly)"]
+   [:h3 "Explore the different attributes of the major bodies of our solar system; First select a system at the top. Visibility is selected on the right list, note that the scale changes accordingly. Select the attributes demonstrated on the" [:span {:style {:color "palevioletred"}} " x "] "and" [:span {:style {:color "palevioletred"}} " y "] "axes. The scale of the graph is linear yet the representation of the size of each body is in a log scale (the differences are too great to show linearly)"]
    
    ;;[mars-group]
    [:svg {:width 1600
