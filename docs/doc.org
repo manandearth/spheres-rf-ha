@@ -84,7 +84,7 @@ This will require redesigning the re-frame db.
 *** TODO Have a look at adding reg-event-fx
 effects can be dispached this way: one, many, or even dispatch-later ...
 ** visual
-*** TODO as I need an intro we must find a better suited bg to take smaller fonts.
+*** DONE as I need an intro we must find a better suited bg to take smaller fonts.
 *** TODO how to make scale work. It is a CSS question..
 both for elements in the page as well as for elemnts in the main view.
 The spheres can change size with inclusion and exclusion
