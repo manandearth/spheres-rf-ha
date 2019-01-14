@@ -81,6 +81,8 @@ for when the selected preset changes.
 *** DONE create presets, groups of bodies as views
 This way we avoid having comparisons that don't make sense.
 This will require redesigning the re-frame db.
+*** TODO Have a look at adding reg-event-fx
+effects can be dispached this way: one, many, or even dispatch-later ...
 ** visual
 *** TODO as I need an intro we must find a better suited bg to take smaller fonts.
 *** TODO how to make scale work. It is a CSS question..
@@ -91,4 +93,13 @@ perhaps an explaination, an about, in a different frame. history..
 
 * data
 ** sources
+- wikipedia, NASA, whatever sites..
+- as the database is getting fuller I could just add an entry every day or so to populate further.
+-
+** new fields of interest
+What other interesting fields I should add? 
+*** look generally at the other fields in wikipedia (gravity, angle..) 
+what can be insightful? unusual? 
+what other boolean fields can I add?
+
 ** implementation

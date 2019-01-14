@@ -149,7 +149,7 @@
                             :self-bias 0
                             :mass 5.6834e+26 
                             :surface_area 42700000000 
-                            :satelites ["Mimas" "Enceladus" "Tethys" "Dione" "Rhea" "Titan" "Iapetus" "Hyperion"]
+                            :satelites ["Mimas" "Enceladus" "Tethys" "Dione" "Rhea" "Titan" "Lapetus" "Pan"]
                             :circumference 378675 
                             :form "planet" 
                             :orbital_period 10759.22 
@@ -162,7 +162,7 @@
                             :self-bias 0
                             :mass 8.681e+25 
                             :surface_area 8115600000 
-                            :satelites [ "Puck" "Miranda" "Ariel" "Umbriel" "Titania" "Oberon"]
+                            :satelites [ "Puck" "Ariel" "Umbriel" "Titania" "Oberon" "Miranda"]
                             :circumference 159354.1 
                             :form "Planet" 
                             :orbital_period 30688.5 
@@ -505,16 +505,28 @@
                           :orbital_period 0.761833
                           :parent "Uranus"
                           :vis true}
-                  "Nereid" {:volume 20579526
-                          :apoapsis  1372000                 
-                          :periapsis 9655000
-                          :mass 2700e+16
-                          :surface_area 363168.11  
-                          :satelites nil
-                          :circumference 1068.1
-                          :form "moon"
-                          :orbital_period 360.1362
-                          :parent "Neptune"
+                  "Miranda" {:volume 54918670 
+                             :apoapsis 129390	
+                             :periapsis 129390	
+                             :mass 65.9e+18
+                             :surface_area 698710.82 
+                             :satelites nil
+                             :circumference 1481.6
+                             :form "moon"
+                             :orbital_period 1.413479
+                             :parent "Uranus"
+                             :vis true}
+                  "Nereid" {:volume
+                            20579526
+                            :apoapsis  1372000                 
+                            :periapsis 9655000
+                            :mass 2700e+16
+                            :surface_area 363168.11  
+                            :satelites nil
+                            :circumference 1068.1
+                            :form "moon"
+                            :orbital_period 360.1362
+                            :parent "Neptune"
                             :vis true}
                   "Triton" {:volume 10384058491
                             :apoapsis 354759

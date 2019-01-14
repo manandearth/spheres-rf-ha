@@ -49,6 +49,19 @@
  (fn [db _]
    (vals (:spheres db))))
 
+(reg-sub
+ ::spheres-vals-compounded
+ (fn [db _]
+   (vals (:spheres (assoc-in db [:spheres (:sys-selected db) :periapsis] (:self-bias (get (:spheres db) (:sys-selected db))))))))
+
+(reg-sub
+ ::the-parent
+ (fn [db _]
+   (get (:spheres db) (:sys-selected db))))
+
+;; @(subscribe [::the-parent])
+;; @(subscribe [::spheres-vals-compounded])
+
 ;;those out of the seq that will show in the vis:
 (reg-sub ::spheres-vals-visible :<- [::spheres-vals]
          (fn [spheres-vals _]
@@ -60,16 +73,21 @@
            (filter :satelites spheres-vals)))
 
 ;;the selected preset plus its children make the menu
+;;TODO need to improve this using :<- ::spheres-vals-compounded 
 (reg-sub ::in-menu 
          (fn [db _]
-           (let [spheres (vals (:spheres db))]
+           (let [spheres
+                 (vals
+                  (:spheres
+                   (assoc-in
+                    (assoc-in db [:spheres (:sys-selected db) :periapsis] (:self-bias (get (:spheres db) (:sys-selected db))))
+                    [:spheres (:sys-selected db) :apoapsis] (:self-bias (get (:spheres db) (:sys-selected db))))))]
              (filter #(or (= (:sys-selected db) (:parent %)) (= (:sys-selected db) (:name %))) spheres
                      ;; #(= (:sys-selected db) (:parent %)) spheres
-                     )
-             )))
+                     ))))
 
 ;; (count @(subscribe [::in-menu]))
-
+;; @(subscribe [::x-selected])
 
 ;;the attributes that were selected on the x
 (reg-sub ::x-selected

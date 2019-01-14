@@ -239,6 +239,7 @@ i.e. 'Sun' in the case of the solar system"
   (let [spheres (subscribe [::subs/in-menu])
         x-select @(subscribe [::subs/x-selected])
         y-select @(subscribe [::subs/y-selected])
+        sys-selected @(subscribe [::subs/sys-selected])
         xmin-val (apply min (map x-select (filter #(= true (:vis %)) @spheres)))
         xmax-val (apply max (map x-select (filter #(= true (:vis %)) @spheres)))
         ymin-val (apply min (map y-select (filter #(= true (:vis %)) @spheres)))
@@ -251,7 +252,8 @@ i.e. 'Sun' in the case of the solar system"
               ]
           (let [xtrans (+ 350 (/ (x-select body) x-fit))
                 ytrans (+ 750 (* -1 (/ (y-select body) y-fit)))
-                size (.log js/Math (:volume body))]
+                size (.log js/Math (:volume body))
+                ]
             [:g {:key (str "g-" (:name body))}
              [:circle#staged
               {:r size
