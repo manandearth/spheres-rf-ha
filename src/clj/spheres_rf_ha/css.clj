@@ -77,32 +77,24 @@
     ]
    ;;this is brilliant! the circle has an adjacent selector
    ;;so it activates the g.tooltip
-   [(s/+ :circle#staged:hover :g.tooltip) {:opacity 1}]
-   
+   [(s/+ :circle#staged:hover :g.tooltip) {
+                                           ;;:opacity 1
+                                           :display "inline"}]
+
    [:circle#staged {:fill "#6666"}]
    [:circle#staged:hover {:fill "#4444"}
-    [:&:g.tooltip {:opacity 1}]
     ]
-
-   [:g.tooltip {:position :relative
-               :display "inline"
-               :cursor "pointer"
-                :opacity 0
-                }
     
-    [:&:hover {;:background "#333"
-                     :background "#ddd"
-                     :border-radius "15px"
-                     :border "solid"
-                     :bottom "20px"
-                     :color "#777"
-                     :content "attr(data-tooltip)"
-                     :left "30%"
-                     :padding "5px 15px"
-                     :position "absolute"
-                     :z-index "8"
-                     :width "220px"
-                     :font-size "50%"
+;;tried :opacity and :visibility as well but :dsplay works best because the space is then unoccupied for the cursor to move upon.
+   [:g.tooltip {:position :relative
+               ;; :display "inline"
+                :cursor "pointer"
+                ;;:opacity 0
+                ;; :visibility false
+                :display "none"
+                }
+    ;;In order for the tooltip to work also when the cursor is in the tooltip actual space: 
+    [:&:hover {:display "inline"
                      }]]
 
    [:text.tooltip {:font-size 30
@@ -112,30 +104,6 @@
                    :fill "#666"
                    }]
    
-   ;; [:.tooltip (garden.selectors/attr :data-tooltip)
-   ;;  {:position :relative
-   ;;   :cursor "pointer"
-   ;;   :z-index "2"
-   ;;   }
-   
-   ;;  [:&:after {:width "100px"
-   ;;             :height "20px"
-   ;;             :font-size "14px"
-   ;;             :opacity "0"
-   ;;             :content "attr(data-tooltip)"
-   ;;             }]
-   ;;  [:&:hover {:color "red"
-   ;;             :opacity "1"
-   ;;             }
-   ;;   ]]
-   
-   
-   
-   
-    
-   ;; [:.tooltip:hover:&:after {
-   ;;                           :opacity "0"
-   ;;                           :transform "translate(-.2rem, 50%)"}]
    
    [:.fill--black {:fill "#222200"}]
    [:.fill--gray1 {:fill "#444444"}]

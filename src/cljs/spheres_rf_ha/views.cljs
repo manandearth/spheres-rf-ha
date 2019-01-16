@@ -318,7 +318,7 @@ i.e. 'Sun' in the case of the solar system"
                 ytrans (+ 750 (* -1 (/ (y-select body) y-fit)))
                 size (.log js/Math (:volume body))
                 ]
-            [:g {:key (str "g-" (:name body))
+            [:g.parent-tooltip {:key (str "g-" (:name body))
                          :data-tooltip "boo"}
              [:circle#staged
               {:r size
@@ -326,27 +326,20 @@ i.e. 'Sun' in the case of the solar system"
                :cy ytrans
                ;; :fill "#6666"
                :key (str "circle-" (:name body))
-               :on-mouse-enter #()
                }]
              [tooltip2 xtrans ytrans x-select y-select body]
-             [:text#staged
+             [:text#staged.tooltip
               { :x xtrans
                :y ytrans
                :font-size 10
                :fill "#888888"
                :key (str "text-" (:name body))} (:name body)]]))]))
 
-(defn tester []
-  [:div {:id "hohoho"
-         :style {:opacity "0"}}
-   [:h1 "cook pot cook"]])
-
-
 (defn main-panel []
   [:div 
    [:div {:style {:width "1000px" :text-align "justify" :padding-left 270} } 
-    [:h1 {:title "Boo!"} "Project Spheres"]
-    [:h2.tooltip {:data-tooltip "wow wow, just a minute..."}  "Interplanetary relations"]
+    [:h1  "Project Spheres"]
+    [:h2   "Interplanetary relations"]
     [:h3 "Explore the different attributes of the major bodies of our solar system; First select a system at the top. Visibility is selected on the right list, note that the scale changes accordingly. Select the attributes demonstrated on the" [:span {:style {:color "palevioletred"}} " x "] "and" [:span {:style {:color "palevioletred"}} " y "] "axes. The scale of the graph is linear yet the representation of the size of each body is in a log scale (the differences are too great to show linearly). \nHovering over a sphere pops its name and relevant selected parameters"]]
    ;; [tester]
    

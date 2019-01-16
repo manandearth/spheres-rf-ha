@@ -73,10 +73,11 @@ see how to spec in order to accept input from user
 the difficulty is how to condition that, it requires that the scale
 will change accordingly and that the original value will not be lost
 for when the selected preset changes.
-*** TODO not sure what data to bring in on hover...
-- the x and the y?
-- a list of attributes of the body?
+*** DONE not sure what data to bring in on hover...
+- [X] the x and the y?
+- [X] style it.
 - what else changes, sphere size?
+slight colour change.
 *** DONE add scale in main-view
 *** DONE create presets, groups of bodies as views
 This way we avoid having comparisons that don't make sense.

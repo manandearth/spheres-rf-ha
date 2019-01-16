@@ -83,7 +83,7 @@ text#no-axis {
 }
 
 circle#staged:hover + g.tooltip {
-  opacity: 1;
+  display: inline;
 }
 
 circle#staged {
@@ -94,30 +94,14 @@ circle#staged:hover {
   fill: #4444;
 }
 
-circle#staged:hover:g.tooltip {
-  opacity: 1;
-}
-
 g.tooltip {
   position: relative;
-  display: inline;
   cursor: pointer;
-  opacity: 0;
+  display: none;
 }
 
 g.tooltip:hover {
-  width: 220px;
-  border: solid;
-  padding: 5px 15px;
-  position: absolute;
-  z-index: 8;
-  content: attr(data-tooltip);
-  font-size: 50%;
-  border-radius: 15px;
-  bottom: 20px;
-  background: #ddd;
-  color: #777;
-  left: 30%;
+  display: inline;
 }
 
 text.tooltip {
