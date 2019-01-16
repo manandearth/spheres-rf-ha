@@ -24,10 +24,10 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-family: Roboto Mono, Impact, sans-serif;
   color: #444477;
-  text-shadow: 3px 3px #ddd;
+  text-shadow: 2px 2px #ddd;
 }
 
 h4 {
@@ -82,12 +82,50 @@ text#no-axis {
   text-shadow: 1px 1px #ddd;
 }
 
+circle#staged:hover + g.tooltip {
+  opacity: 1;
+}
+
 circle#staged {
   fill: #6666;
 }
 
 circle#staged:hover {
   fill: #4444;
+}
+
+circle#staged:hover:g.tooltip {
+  opacity: 1;
+}
+
+g.tooltip {
+  position: relative;
+  display: inline;
+  cursor: pointer;
+  opacity: 0;
+}
+
+g.tooltip:hover {
+  width: 220px;
+  border: solid;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 8;
+  content: attr(data-tooltip);
+  font-size: 50%;
+  border-radius: 15px;
+  bottom: 20px;
+  background: #ddd;
+  color: #777;
+  left: 30%;
+}
+
+text.tooltip {
+  font-size: 30;
+  position: relative;
+  font-family: Roboto Mono, Impact, san-serif;
+  text-shadow: 1px 1px #ddd;
+  fill: #666;
 }
 
 .fill--black {

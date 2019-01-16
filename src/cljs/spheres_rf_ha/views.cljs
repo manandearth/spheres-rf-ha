@@ -233,6 +233,70 @@ i.e. 'Sun' in the case of the solar system"
 ;;       x-select @(subscribe [::subs/x-selected])]
 ;;   (apply max (map x-select @spheres)))
 
+(defn body-tooltip
+  "helper function defines tooltip text"
+  [x-select y-select body]
+  [:title (str (:name body) "\n"
+                   (name x-select) " : " (x-select body)
+                   (case  x-select
+                     :apoapsis " km"
+                     :periapsis " km"
+                     :circumference " km"
+                     :mass " kg"
+                     :volume " km³"
+                     :orbital_period " days"
+                     :surface_area " km²" "") "\n"
+                   (name y-select) " : " (y-select body)
+                   (case  y-select
+                     :apoapsis " km"
+                     :periapsis " km"
+                     :circumference " km"
+                     :mass " kg"
+                     :volume " km³"
+                     :orbital_period " days"
+                     :surface_area " km²" ""))]
+  )
+
+(defn tooltip2
+  "helper function defines tooltip text"
+  [xtrans ytrans x-select y-select body]
+  [:g.tooltip
+   [:rect {:x xtrans
+           :y ytrans
+           :width 350
+           :height 100
+           :rx 20
+           :fill "#ccc"
+           }
+    ]
+   [:text.tooltip {:x (+ 20 xtrans)
+                   :y (+ 20 ytrans)
+                   
+                   } (str (:name body))]
+   [:text.tooltip {:x (+ 20 xtrans)
+                   :y (+ 50 ytrans)}
+    (name x-select) " : " (x-select body)
+    (case  x-select
+      :apoapsis " km"
+      :periapsis " km"
+      :circumference " km"
+      :mass " kg"
+      :volume " km³"
+      :orbital_period " days"
+      :surface_area " km²" "")]
+   [:text.tooltip {:x (+ 20 xtrans)
+                   :y (+ 80 ytrans)}
+    (name y-select) " : " (y-select body)
+    (case  y-select
+      :apoapsis " km"
+      :periapsis " km"
+      :circumference " km"
+      :mass " kg"
+      :volume " km³"
+      :orbital_period " days"
+      :surface_area " km²" "")]]
+  )
+
 
 
 (defn bodies []
@@ -254,30 +318,37 @@ i.e. 'Sun' in the case of the solar system"
                 ytrans (+ 750 (* -1 (/ (y-select body) y-fit)))
                 size (.log js/Math (:volume body))
                 ]
-            [:g {:key (str "g-" (:name body))}
+            [:g {:key (str "g-" (:name body))
+                         :data-tooltip "boo"}
              [:circle#staged
               {:r size
                :cx xtrans 
                :cy ytrans
                ;; :fill "#6666"
                :key (str "circle-" (:name body))
-               :on-mouse-over #() ;TODO event for mouse on sphere
-               }
-              ]
+               :on-mouse-enter #()
+               }]
+             [tooltip2 xtrans ytrans x-select y-select body]
              [:text#staged
-              {:x xtrans
+              { :x xtrans
                :y ytrans
                :font-size 10
                :fill "#888888"
                :key (str "text-" (:name body))} (:name body)]]))]))
 
+(defn tester []
+  [:div {:id "hohoho"
+         :style {:opacity "0"}}
+   [:h1 "cook pot cook"]])
+
 
 (defn main-panel []
   [:div 
    [:div {:style {:width "1000px" :text-align "justify" :padding-left 270} } 
-    [:h1  "Project Spheres" ]
-    [:h2 "Interplanetary relations"]
-    [:h3 "Explore the different attributes of the major bodies of our solar system; First select a system at the top. Visibility is selected on the right list, note that the scale changes accordingly. Select the attributes demonstrated on the" [:span {:style {:color "palevioletred"}} " x "] "and" [:span {:style {:color "palevioletred"}} " y "] "axes. The scale of the graph is linear yet the representation of the size of each body is in a log scale (the differences are too great to show linearly)"]]
+    [:h1 {:title "Boo!"} "Project Spheres"]
+    [:h2.tooltip {:data-tooltip "wow wow, just a minute..."}  "Interplanetary relations"]
+    [:h3 "Explore the different attributes of the major bodies of our solar system; First select a system at the top. Visibility is selected on the right list, note that the scale changes accordingly. Select the attributes demonstrated on the" [:span {:style {:color "palevioletred"}} " x "] "and" [:span {:style {:color "palevioletred"}} " y "] "axes. The scale of the graph is linear yet the representation of the size of each body is in a log scale (the differences are too great to show linearly). \nHovering over a sphere pops its name and relevant selected parameters"]]
+   ;; [tester]
    
    [:svg {:width 1600
           :height 950}
@@ -287,12 +358,13 @@ i.e. 'Sun' in the case of the solar system"
                      :height 700
                      ;:on-click #(dispatch[])
                      }]
-    [bodies]
+   
     [y-axis]
     [x-axis]
     [x-scale-bars]
     [y-scale-bars]
     [body-menu]
     [systems]
+    [bodies]
     ]
    ])

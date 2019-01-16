@@ -1,5 +1,6 @@
 (ns spheres-rf-ha.css
-  (:require [garden.def :refer [defstylesheet]]))
+  (:require [garden.def :refer [defstylesheet]]
+            [garden.selectors :as s]))
 
 (defstylesheet screen
   {:output-to "resources/public/css/screen.css"}
@@ -26,10 +27,10 @@
          :text-shadow "3px 3px #ddd"}
          ]
 
-   [:h3 {:font-size "2rem"
+   [:h3 {:font-size "1.2rem"
          :font-family "Roboto Mono, Impact, sans-serif"
          :color "#444477"
-         :text-shadow "3px 3px #ddd"}
+         :text-shadow "2px 2px #ddd"}
     ]
 
    [:h4 {:font-size "1rem"
@@ -74,11 +75,68 @@
                    :fill "#999999"
                    :text-shadow "1px 1px #ddd"}
     ]
-
+   ;;this is brilliant! the circle has an adjacent selector
+   ;;so it activates the g.tooltip
+   [(s/+ :circle#staged:hover :g.tooltip) {:opacity 1}]
+   
    [:circle#staged {:fill "#6666"}]
-   [:circle#staged:hover {:fill "#4444"}]
+   [:circle#staged:hover {:fill "#4444"}
+    [:&:g.tooltip {:opacity 1}]
+    ]
 
+   [:g.tooltip {:position :relative
+               :display "inline"
+               :cursor "pointer"
+                :opacity 0
+                }
+    
+    [:&:hover {;:background "#333"
+                     :background "#ddd"
+                     :border-radius "15px"
+                     :border "solid"
+                     :bottom "20px"
+                     :color "#777"
+                     :content "attr(data-tooltip)"
+                     :left "30%"
+                     :padding "5px 15px"
+                     :position "absolute"
+                     :z-index "8"
+                     :width "220px"
+                     :font-size "50%"
+                     }]]
 
+   [:text.tooltip {:font-size 30
+                   :position "relative"
+                   :font-family "Roboto Mono, Impact, san-serif"
+                   :text-shadow "1px 1px #ddd"
+                   :fill "#666"
+                   }]
+   
+   ;; [:.tooltip (garden.selectors/attr :data-tooltip)
+   ;;  {:position :relative
+   ;;   :cursor "pointer"
+   ;;   :z-index "2"
+   ;;   }
+   
+   ;;  [:&:after {:width "100px"
+   ;;             :height "20px"
+   ;;             :font-size "14px"
+   ;;             :opacity "0"
+   ;;             :content "attr(data-tooltip)"
+   ;;             }]
+   ;;  [:&:hover {:color "red"
+   ;;             :opacity "1"
+   ;;             }
+   ;;   ]]
+   
+   
+   
+   
+    
+   ;; [:.tooltip:hover:&:after {
+   ;;                           :opacity "0"
+   ;;                           :transform "translate(-.2rem, 50%)"}]
+   
    [:.fill--black {:fill "#222200"}]
    [:.fill--gray1 {:fill "#444444"}]
    [:.fill--gray2 {:fill "#888888"}]
