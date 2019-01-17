@@ -7,9 +7,11 @@
   [
    ;; [:body {:background-image "url(/images/gray2.png)"
    ;;         :background-size "8px"}]
+
+
    
-   [:#app {:margin "0 auto"
-           :width "1010px"}]
+   ;; [:#app {:margin "0 auto"
+   ;;         :width "1010px"}]
 
    [:svg {:margin-left "-25px"}]
 
@@ -104,6 +106,40 @@
                    :fill "#666"
                    }]
    
+
+   [:.footer
+    {
+     :background "#cac9c6"
+     ;:position "absolute"
+     :bottom "0"
+     :left "0"
+     :width "100%"
+     :margin-top "4.5em"
+     :padding-top "0.75em"
+     :padding-bottom "0.75em"
+     }]
+
+   ;; [:&:.a
+   ;;  {
+   ;;   :color: #3f464c;
+   ;;   :text-decoration: underline; }
+   ;;   .footer a:hover {
+   ;;                    color: #3f464c; }
+   ;;                    }
+   ;;   }]
+       
+
+
+
+
+
+
+
+
+
+
+
+
    
    [:.fill--black {:fill "#222200"}]
    [:.fill--gray1 {:fill "#444444"}]

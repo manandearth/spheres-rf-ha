@@ -335,8 +335,20 @@ i.e. 'Sun' in the case of the solar system"
                :fill "#888888"
                :key (str "text-" (:name body))} (:name body)]]))]))
 
+(defn footer []
+  [:div.footer
+   ;; {:style {:background "#ddd"
+   ;;               :display "block"
+   ;;          }}
+   [:p
+    {:style
+     {:margin-left "200px"}}
+    "Made by"
+    [:a {:href "https://github.com/manandearth"} " Adam Gefen, "]
+    "A clojure developer, an open source under the " [:a {:href "https://opensource.org/licenses/Artistic-2.0"} "Apache Artistic License 2.0"]]] )
+
 (defn main-panel []
-  [:div 
+  [:body {:style { :position "absolute"}}
    [:div {:style {:width "1000px" :text-align "justify" :padding-left 270} } 
     [:h1  "Project Spheres"]
     [:h2   "Interplanetary relations"]
@@ -360,4 +372,5 @@ i.e. 'Sun' in the case of the solar system"
     [systems]
     [bodies]
     ]
+   [footer]
    ])

@@ -2,6 +2,15 @@
 
 A [re-frame](https://github.com/Day8/re-frame) application designed to illustrate the systems within our solar system, relations.
 
+## Github Pages Demo
+
+https://manandearth.github.io/spheres-rf-ha/
+
+Explore the different attributes of the major bodies of our solar system; First select a system at the top. Visibility is selected on the right list, note that the scale changes accordingly. Select the attributes demonstrated on the x and y axes. The scale of the graph is linear yet the representation of the size of each body is in a log scale (the differences are too great to show linearly). Hovering over a sphere pops its name and relevant selected parameters
+
+## list of ideas and issues
+https://github.com/manandearth/spheres-rf-ha/blob/gh-pages/docs/doc.org
+
 ## Development Mode
 
 ### Start Cider from Emacs:
